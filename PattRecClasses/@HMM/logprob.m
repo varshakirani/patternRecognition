@@ -36,5 +36,14 @@ for i=1:numel(hmm)%for all HMM objects
     %
     %logP(i)= result for hmm(i)
     %continue coding from here, and delete the error message.
-    error('Not yet implemented');
-end;
+    
+    mc = hmm(i).StateGen;
+    [pX,logS] = prob(hmm(i).OutputDistr,x);
+    [~, c]=forward(mc,pX);
+    a = log(c);
+        a(1:T) = a(1:T) + logS;
+        logP(i) = sum(a);
+end
+
+
+end
