@@ -8,6 +8,6 @@ classTest = [1,3,4,5,6,7,8,9];
 noClasses = length(classTest);
 for i=1:noClasses
     
-    eval(['hmm_' num2str(classTest(i)) ' = TrainHMM(' num2str(classTest(i)) ',' num2str(nStatesV(i)) ')' ]);
-    
+    eval(['[hmm_' num2str(classTest(i)) ' , TrainingSamples_' num2str(classTest(i)) ' , TestingSamples_' num2str(classTest(i)) ' ] = TrainHMM(' num2str(classTest(i)) ',' num2str(nStatesV(i)) ')' ]);
+     
 end

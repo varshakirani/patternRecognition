@@ -1,5 +1,5 @@
 %this script reads all audio data and gives mfcc of the folder
-function [ hmm ] = TrainHMM( classTest, nStates )
+function [ hmm,TrainingSamples,TestingSamples ] = TrainHMM( classTest, nStates )
 
 
 % listing = dir(fullfile('/home/varsha/KTH courses/Pattern Recognition/Project/patternRecognition/PattRecClasses/TrainingDataUsed/samples/*.wav'));
